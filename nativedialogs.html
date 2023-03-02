@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Dialogs</title>
+        <script type="text/javascript" src="./DOMPurify/dist/purify.min.js"></script>
+    </head>
+      <body>
+        <h1>Simple Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <button id="safer-prompt">Safer Prompt</button>
+        <br>
+        <hr>
+        <output></output>
+        <script>
+            function alertmsg(){
+                window.alert('Alert Message!');
+            }
+          let alertbutton = document.getElementById('alert');
+          alertbutton.addEventListener('click', alertmsg);
+    
+
+          function confirmmsg(){
+            let output = document.querySelector('output');
+            let result = window.confirm('Do you confirm this?');
+            output.textContent = `The value returned by the confirm method is: ${result}`;
+          }
+          let confirmbutton = document.getElementById('confirm');
+          confirmbutton.addEventListener('click', confirmmsg);
+    
+
+          function promptmsg(){
+            let output = document.querySelector('output');
+            let result = window.prompt('What\'s your name');
+            if (result === null || result === undefined || result == ''){
+                output.textContent = 'User didn’t enter anything';
+            }
+            else {
+                let clean = DOMPurify.sanitize(result);
+                output.innerHTML = `Prompt Result: ${clean}`;
+            }
+          }
+          let promptbutton = document.getElementById('prompt');
+          promptbutton.addEventListener('click', promptmsg);
+
+
+          function saferpromptmsg(){
+            let output = document.querySelector('output');
+            let result = window.prompt('What\'s your name','<b onmouseover="alert("pawned")>Roll me</b>');
+            if (result === null || result === undefined || result == ''){
+                output.textContent = 'User didn’t enter anything';
+            }
+            else {
+                let clean = DOMPurify.sanitize(result);
+                output.innerHTML = `Prompt Result: ${clean}`;
+            }
+          }
+          let saferpromptbutton = document.getElementById('safer-prompt');
+          saferpromptbutton.addEventListener('click', saferpromptmsg);
+    
+        </script>
+      </body>
+    </html>

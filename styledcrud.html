@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Blog post</title>
+    <style>
+        li {
+            font-size:1.2rem;
+            padding: 4px;
+            margin: 6px;
+            background-color:lightgray;
+        }
+        button {
+            font-size:1.2rem;
+            margin: 6px;
+        }
+        h1{
+            color: darkblue;
+            text-align:center;
+            font-size:3rem;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fa fa-book" style="color:brown"></i>blog posts <i class="fa fa-book" style="color:brown"></i></h1>
+    <p>click Add Item button below to add now comments</p>
+    <hr>
+    <ul id="blogs"></ul>
+    <button id="add-button" onclick='dialogshow()'
+    style="font-size:2rem;">Add Item<i class="fa fa-star" style="color:gold"></i></button>
+
+    <dialog id="newdialog">
+            <label for="title">Title:</label>
+            <input id="title" name="title" required>
+            <br>
+            <label for="date">Date:</label>
+            <input type='date' id="date" name="date" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name = "description" required></textarea>
+            <br>
+            <button id="save" onclick='addpost()'>Save</button>
+            <button id="cancel">Cancel</button>
+    </dialog>
+
+    <dialog id="deletedialog">
+        <p>Do you confirm to delete this?</p>
+        <button id="yes-delete">Yes</button>
+        <button id="no-delete">No</button>
+      </dialog>
+
+    <dialog id="editdialog">
+            <label for="edit-title">Title:</label>
+            <input id="edit-title" name="edit-title">
+            <br>
+            <label for="edit-date">Date:</label>
+            <input type="date" id="edit-date" name="edit-date">
+            <br>
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name = "edit-description"></textarea>
+            <br>
+            <button id="edit">Save</button>
+            <button id="cancel-edit">Cancel</button>
+    </dialog>
+
+    <script src="./blog.js"></script>
+</body>
+</html>

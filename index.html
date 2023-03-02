@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Runyu Tian's webpage</title>
+    <style>
+      nav{
+        margin:10px;
+        padding:5px;
+        background-color:rgb(200,200,200);
+        font-size:1rem;
+      }
+      aside {float: right;}
+    </style>
+    <link rel = "stylesheet" href = "style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to Runyu Tian's Homepage</h1>
+
+
+
+      <nav>
+        <a href="#About">About <i class="fa fa-address-card-o"></i></a>
+        <br>
+        <a href="#Research">Research <i class="fa fa-flask"></i></a>
+        <br>
+        <a href="#Work">Work Experience <i class="fa fa-briefcase"></i></a>
+        <br>
+        <a href="#Resume">Resume <i class="fa fa-file"></i></a>
+        <br>
+        <a href="#Transcript">Transcript <i class="fa fa-graduation-cap"></i></a>
+        <br>
+        <a href="#Contact form">Contact Form <i class="fa fa-users"></i></a>
+        <br>
+        <a href="#Comments">Leaving Comments <i class="fa fa-comments"></i></a>
+      </nav>
+
+
+      <br>
+    
+      <section id="About">
+      <h2>About <i class="fa fa-address-card-o" ></i></h2>
+      <picture>
+        <source media="(max-width:650px)" srcset="ucsd.webp">
+        <img src="Rain.png" alt="Runyu's Picture">
+      </picture>
+      <p class="transform">My name is Runyu Tian, I major in Math-CS</p>
+      </section>
+      <hr>
+      
+  
+      <section id="Research">
+      <h2>Research <i class="fa fa-flask"></i></h2>
+      <ul>
+        <li>
+          <details>
+            <summary>research1</summary>
+            <p>did blabla</p>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>research2</summary>
+            <p>did blabla, and bla</p>
+          </details>
+        </li>
+      </ul> 
+    </section>
+    <hr>
+      
+      <br>
+      <section id="Work">
+      <h2>Work Experience <i class="fa fa-briefcase"></i></h2>
+      <ol>
+        <li>ucsd</li>
+        <li>other place</li>
+      </ol>
+    </section>
+    <hr>
+      
+      <br>
+      <section id="Resume">
+      <h2>Resume <i class="fa fa-file"></i></h2>
+      <div>will be here soon</div>
+      </section>
+      <hr>
+      
+      <br>
+      <section id="Transcript"></section>
+      <h2>Transcript <i class="fa fa-graduation-cap"></i></h2>
+      <template> Contents </template>
+      <table>
+        <caption>details below</caption>
+        <colgroup><col span = "2"></colgroup>
+        <tr>
+          <th>course</th>
+          <th>grade</th>
+        </tr>
+        <tr>
+          <td>cse152a</td>
+          <td>A+</td>
+        </tr>
+        <tr>
+          <td>cse158</td>
+          <td>A+</td>
+        </tr>
+      </table>
+    </section>
+    <br>
+    <hr>
+      
+    <section id="Contact form">
+      <h2>Contact form <i class="fa fa-users"></i></h2>
+      <form method="post">
+      <label>What's your Name?:
+      <input name="submitted-name" autocomplete="name">
+      </label>
+      <fieldset>
+        <legend>What's your intention</legend>
+        <input type="radio" id="talk">
+        <label for = "talk">just to talk</label>
+        <br>
+        <input type="radio" id="recruitment">
+        <label for = "recruitment">recruitment</label>
+      </fieldset>
+      
+      <label for="intention">What do you want to know more:</label>
+      <select id="intention">
+        <optgroup label="Academic">
+          <option>research</option>
+          <option>Transcript</option>
+        </optgroup>
+        <optgroup label="professional">
+          <option>work experience</option>
+          <option>resume</option>
+        </optgroup>
+      </select>
+      <br>
+      <label for="moreinfo">What do you want to tell me</label>
+      <br>
+      <textarea id="moreinfo" name="moreinfo" rows = 3>Please write here</textarea>
+      <br>
+      <label for="advice">How do you think of my website?</label>
+      <input list="advices" name="advice" id="advice">
+        <datalist id="advices">
+          <option value="good">
+          <option value="fine">
+          <option value="bad">
+        </datalist>
+        <br>
+      <button>Save</button>
+      </form>
+    </section> 
+    <br>
+    <hr>
+
+    <section id="Comments">
+      <h2>Comments Post <i class="fa fa-comments"></i></h2>
+    <ul id="blogs-ul"></ul>
+    <button id="add-button" onclick='dialogshow()'>Add Item</button>
+
+    <dialog id="newdialog">
+            <label for="title">Title:</label>
+            <input id="title" name="title" required>
+            <br>
+            <label for="date">Date:</label>
+            <input type='date' id="date" name="date" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name = "description" required></textarea>
+            <br>
+            <button id="save" onclick='addpost()'>Save</button>
+            <button id="cancel">Cancel</button>
+    </dialog>
+
+    <dialog id="deletedialog">
+        <p>Do you confirm to delete this?</p>
+        <button id="yes-delete">Yes</button>
+        <button id="no-delete">No</button>
+      </dialog>
+
+    <dialog id="editdialog">
+            <label for="edit-title">Title:</label>
+            <input id="edit-title" name="edit-title">
+            <br>
+            <label for="edit-date">Date:</label>
+            <input type="date" id="edit-date" name="edit-date">
+            <br>
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name = "edit-description"></textarea>
+            <br>
+            <button id="edit">Save</button>
+            <button id="cancel-edit">Cancel</button>
+    </dialog>
+    </section>
+    </main>
+    <script src="index_backend.js"></script>
+  </body>
+</html>

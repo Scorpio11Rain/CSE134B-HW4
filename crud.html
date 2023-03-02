@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Blog post</title>
+</head>
+<body>
+    <h1>blog posts</h1>
+    <ul id="blogs"></ul>
+    <button id="add-button" onclick='dialogshow()'>Add Item</button>
+
+    <dialog id="newdialog">
+            <label for="title">Title:</label>
+            <input id="title" name="title" required>
+            <br>
+            <label for="date">Date:</label>
+            <input type='date' id="date" name="date" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name = "description" required></textarea>
+            <br>
+            <button id="save" onclick='addpost()'>Save</button>
+            <button id="cancel">Cancel</button>
+    </dialog>
+
+    <dialog id="deletedialog">
+        <p>Do you confirm to delete this?</p>
+        <button id="yes-delete">Yes</button>
+        <button id="no-delete">No</button>
+      </dialog>
+
+    <dialog id="editdialog">
+            <label for="edit-title">Title:</label>
+            <input id="edit-title" name="edit-title">
+            <br>
+            <label for="edit-date">Date:</label>
+            <input type="date" id="edit-date" name="edit-date">
+            <br>
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name = "edit-description"></textarea>
+            <br>
+            <button id="edit">Save</button>
+            <button id="cancel-edit">Cancel</button>
+    </dialog>
+
+    <script src="blog.js"></script>
+</body>
+</html>

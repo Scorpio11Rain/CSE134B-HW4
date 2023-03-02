@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Dialog</title>
+    <script type="text/javascript" src="./DOMPurify/dist/purify.min.js"></script>
+  </head>
+  <body>
+    <button id="alertButton">alert</button>
+    <button id="confirmButton">confirm</button>
+    <button id="promptButton">Prompt</button>
+    <br>
+    <hr>
+    <output></output>
+
+    <dialog id="alertDialog">
+      <p>Alert Pressed</p>
+      <button id="alertok">OK</button>
+    </dialog>
+
+    <dialog id="confirmDialog">
+      <p>Do you confirm this?</p>
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </dialog>
+
+    <dialog id="promptDialog">
+      <label for="input">What's your name?:</label>
+      <br>
+      <input type="text" id="input">
+      <br>
+      <button id="promptOk">OK</button>
+      <button id="promptCancel">Cancel</button>
+    </dialog>
+
+    <script src="customdialog.js"></script>
+  </body>
+</html>
